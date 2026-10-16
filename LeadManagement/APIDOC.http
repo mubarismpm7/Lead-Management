@@ -1,0 +1,89 @@
+###
+POST http://127.0.0.1:8000/lead
+Content-Type: application/json
+Authorization: Basic admin:admin@123
+
+{
+    "name":"mubaris",
+    "phone":9048879473,
+    "email":"mpm@gmail.com",
+    "course":"python fullstack",
+    "source":"call",
+    "status":"contacted",
+    "notes":"Evening batch preferred"
+}
+
+#API call for list all leads
+###
+GET http://127.0.0.1:8000/lead
+Authorization: Basic admin:admin@123
+
+#API Call for lead detail view
+###
+GET http://127.0.0.1:8000/lead/detail/1
+Authorization: Basic admin:admin@123
+
+
+#API Call for update a lead data
+###
+GET http://127.0.0.1:8000/lead/detail/1
+Authorization: Basic admin:admin@123
+
+{
+    "id":1,
+    "name":"anu",
+    "phone":9898989898,
+    "email":"anu@gmail.com",
+    "course":"python fullstack",
+    "source":"website",
+    "status":"contacted",
+    "added_date":"2026-10-15T05:55:41.001266Z",
+    "notes":"Evening batch preferred"
+}
+
+#API Call for delete a lead data
+###
+DELETE http://127.0.0.1:8000/lead/detail/1
+Authorization: Basic admin:admin@123
+
+#API Call for status level lead list
+###
+DELETE http://127.0.0.1:8000/lead/status
+Authorization: Basic admin:admin@123
+
+
+#API Call for ordering leads based on name
+###
+GET http://127.0.0.1:8000/lead?ordering=name
+Authorization: Basic admin:admin@123
+
+#API Call for ordering leads based on added date in ascending
+###
+GET http://127.0.0.1:8000/lead?ordering=added_name
+Authorization: Basic admin:admin@123
+
+#API Call for ordering leads based on added date in descending
+###
+GET http://127.0.0.1:8000/lead?ordering=-added_name
+Authorization: Basic admin:admin@123
+
+#API Call for ordering leads based on status
+###
+GET http://127.0.0.1:8000/lead?search=New&search=website
+Authorization: Basic admin:admin@123
+
+
+#API Call for ordering leads based on status
+###
+GET http://127.0.0.1:8000/lead?search=contacted
+Authorization: Basic admin:admin@123
+
+#API Call for ordering leads based on status
+###
+GET http://127.0.0.1:8000/lead?search=Referral New
+Authorization: Basic admin:admin@123
+
+#API Call for ordering leads based on status
+###
+GET http://127.0.0.1:8000/lead?status=contacted&source=Referral
+Authorization: Basic admin:admin@123
